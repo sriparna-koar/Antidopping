@@ -28,17 +28,22 @@ const events = [
 
 function UpcomingEvents() {
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-4">
-      <h2 className="text-3xl font-bold mb-6">Upcoming Events</h2>
-      <div className="space-y-6">
+    <div className="max-w-4xl mx-auto mt-10 p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+      <h2 className="text-4xl font-extrabold mb-8 text-center text-green-400 animate-fade-in">
+        Upcoming Events
+      </h2>
+      <div className="space-y-8">
         {events.map((event, index) => (
-          <div key={index} className="flex items-center border-b border-gray-300 pb-4">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-black leading-tight">{event.date}</div>
-              <div className="text-xl font-light text-gray-600">{event.monthYear}</div>
+          <div
+            key={index}
+            className="flex items-center border-b border-gray-700 pb-4 hover:bg-gray-800 transition duration-300 p-4 rounded-lg shadow-md"
+          >
+            <div className="text-center w-20">
+              <div className="text-6xl font-extrabold text-green-400">{event.date}</div>
+              <div className="text-xl font-light text-gray-400">{event.monthYear}</div>
             </div>
-            <div className="ml-6 flex-grow">
-              <p className="text-gray-800 font-medium text-lg">{event.description}</p>
+            <div className="ml-8 flex-grow">
+              <p className="text-gray-200 font-medium text-lg">{event.description}</p>
             </div>
           </div>
         ))}
@@ -49,7 +54,7 @@ function UpcomingEvents() {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-gray-800 min-h-screen">
       <Header />
       <Hero />
       <SpeakUp />
